@@ -140,12 +140,25 @@ Sustainable Development Goals (SDGs)."
             :title "Myriam Pham-Truffert"
             :icon-url "img/myriam.jpg"
             :rounded? true}]
-  [content {:description "Viviane Walker is a research assistant at the Digital
-  Society Initiative and a student in communications and computational
-  linguistics at the University of Zurich."
+  [content {:description
+            [:p "Viviane Walker is a research assistant at the Digital
+  Society Initiative supporting the SDGnets@ZH research team. She is currently
+  enrolled as a Bachelor student majoring in communication science and media
+  research with a minor in computational linguistics and language
+  technology. Her bachelor thesis is an automated content analysis of Newspaper
+  articles investigating Issue Attention in the context of climate change
+  conferences (COPs). In the upcoming autumn semester 2022 - starting this
+  September - she is focusing on computational linguistics modules, like the
+  course “Introduction to Machine Learning”. She is planning to continue
+  studying computational linguistics and language technology as a Master
+  degree."
+             [:br]
+             [:br]
+             [:a {:href "mailto:viviane.walker.uzh.ch"}
+              [:img {:border "0", :src "img/email.png", :alt "Send an email", :width "60", :height "60"}]]]
             :title "Viviane Walker"
-            :rounded? true
-            :icon-url "img/yoda.jpg"}]
+            :icon-url "img/viviane.png"
+            :rounded? true}]
   [content {:description "Neitah Noemi Müller is a research assistant at the
   Digital Society Initiative and a Master's student in religion, economy and
   politics at the University of Zurich."
