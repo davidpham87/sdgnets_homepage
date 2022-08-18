@@ -129,7 +129,7 @@ discourses."
             [:p "Myriam Pham-Truffert is a PhD student at the
 Digital Society Initiative and the Department of Geography of the University of
 Zurich. Her PhD thesis is about the use of gamification and participatory
-modeling to gather data on contextualized, local-level interactions between
+modeling to gather data on contextualized, local level interactions between
 Sustainable Development Goals (SDGs)."
              [:br]
              [:br]
