@@ -160,9 +160,15 @@ Sustainable Development Goals (SDGs)."
             :icon-url "img/viviane.png"
             :rounded? true}]
   [content {:description
-            [:p "Neitah Noemi Müller is a research assistant at the
-  Digital Society Initiative and a Master's student in religion, economy and
-  politics at the University of Zurich."
+            [:p "Neitah Noemi Müller is a research assistant at the Digital
+  Society Initiative and a Master's student in religion, economy and politics
+  at the University of Zurich. She wrote her bachelor thesis in the empirical
+  social science field of religious studies about a religious minority in Iran
+  using qualitative methods. For her master's thesis, she plans to focus on
+  religious actors in the context of the SDGs and with computational
+  methods. Neitah could imagine doing a PhD afterwards, deepening on religion
+  in connection with currently relevant topics such as sustainability,
+  digitalization, or social media."
              [:br]
              [:br]
              [:a {:href "mailto:neitahnoemi.mueller@uzh.ch"}
