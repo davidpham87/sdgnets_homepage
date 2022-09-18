@@ -1,6 +1,6 @@
 (ns app.views
   (:require
-   [app.components :refer (button title below-hero below-title content team news)]
+   [app.components :refer (button title below-hero below-title content team)]
    [app.state :refer (app-state)]
    [app.working-packages.mapping-actor-networks :refer (wp-1)]
    [app.working-packages.studying-sdg-interactions :refer (wp-2)]
@@ -15,9 +15,7 @@
   [:div {:class "flex justify-between my-8 w-full px-4 z-50 mb-4"} ;; alternative :div.flex :div#id <=> :div {:id "id"}
    [:div {:class "flex"}
     [nav-button {:title "Home"}]
-    [nav-button {:title "Team"}]
-    [nav-button {:title "News"}]]])
-
+    [nav-button {:title "Team"}]]])
 
 (defn tasks_2
   []
@@ -169,7 +167,7 @@
     (cond
       (= v "Home") [home]
       (= v "Team") [team]
-      (= v "News") [news]
+      ;;(= v "News") [news]
       :else [home])))
 
 
@@ -178,7 +176,7 @@
   (let [v (:view @app-state)]
     [:<>
      (cond
-       (#{"Home" "Team" "News"} v)
+       (#{"Home" "Team"} v)
        [:div.gradient.overflow-x-hidden
         [navbar]
         [title]
