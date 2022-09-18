@@ -7,16 +7,26 @@
     :on-click (or on-click (constantly 0))}
    [:h {:class "text-gray-800 mb-8"} title]])
 
+(def title-data
+  {:en {:title "Digitalization and urban sustainability transformations in Zurich"
+        :description "Supporting actor networks in Zurich on the road to 2030. A project from the Digital Society Initiative (DSI) at the University of Zurich."
+        :logo "img/uzh_e.jpg"}
+   :de {:title "Digitalisierung und urbane Nachhaltigkeitstransformationen in Zürich"
+        :description "Akteursnetzwerke auf dem Weg zu 2030 unterstützen. Ein Projekt von der Digital Society Initiative (DSI) an der Universität Zürich."
+        :logo "img/uzh_d.jpg"}})
+
+
 (defn title
-  []
-  [:div {:class "container pt-5 px-3 mx-auto flex flex-wrap flex-col md:flex-row items-strech gap-5"}
-   [:div {:class "flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left"}
-    [:p {:class "uppercase tracking-loose w-full"} "Digitalization and urban sustainability transformations in Zurich"]
-    [:h1 {:class "my-4 text-5xl font-bold leading-tight"} "SDGnets@ZH"]
-    [:p {:class "leading-normal text-2xl mb-8"} "Supporting actor networks in Zurich on the road to 2030. A project from the Digital Society Initiative (DSI) at the University of Zurich."]
-    [:img {:width "180", :src "img/uzh_e.jpg"}]]
-   [:div {:class "w-full md:w-2/5 lg:w-80 py-6 text-center md:-my-6"}
-    [:img {:class "w-full z-50", :src "img/SDGNets_logo.png"}]]])
+  [{:keys [lang] :or {lang :en}}]
+  (let [m (get title-data lang)]
+    [:div {:class "container pt-5 px-3 mx-auto flex flex-wrap flex-col md:flex-row items-strech gap-5"}
+     [:div {:class "flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left"}
+      [:p {:class "uppercase tracking-loose w-full"} (:title m)]
+      [:h1 {:class "my-4 text-5xl font-bold leading-tight"} "SDGnets@ZH"]
+      [:p {:class "leading-normal text-2xl mb-8"} (:description m)]
+      [:img {:width "180", :src (:logo m)}]]
+     [:div {:class "w-full md:w-2/5 lg:w-80 py-6 text-center md:-my-6"}
+      [:img {:class "w-full z-50", :src "img/SDGNets_logo.png"}]]]))
 
 (defn below-title []
   [:img {:class "w-full z-50", :src "img/wave.png"}])

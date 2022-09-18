@@ -11,11 +11,28 @@
    [button {:title title
             :on-click (fn [] (swap! app-state assoc :view title))}]])
 
+(defn lang-button [{:keys [title lang]}]
+  [:div.z-50
+   [button {:title title
+            :on-click (fn [] (swap! app-state assoc :lang lang))}]])
+
+(defn navbar-en []
+  [:div {:class "flex"}
+   [nav-button {:title "Home"}]
+   [nav-button {:title "Team"}]
+   [lang-button {:title "Deutsch" :lang :de}]])
+
+(defn navbar-de []
+  [:div {:class "flex"}
+   [nav-button {:title "Home"}]
+   [nav-button {:title "Team"}]
+   [lang-button {:title "English" :lang :en}]])
+
 (defn navbar []
   [:div {:class "flex justify-between my-8 w-full px-4 z-50 mb-4"} ;; alternative :div.flex :div#id <=> :div {:id "id"}
-   [:div {:class "flex"}
-    [nav-button {:title "Home"}]
-    [nav-button {:title "Team"}]]])
+   (if (= (:lang @app-state) :en)
+     [navbar-en]
+     [navbar-de])])
 
 (defn tasks_2
   []
@@ -167,19 +184,20 @@
     (cond
       (= v "Home") [home]
       (= v "Team") [team]
-      ;;(= v "News") [news]
+      (= v "Deutsch") [home]
       :else [home])))
 
 
 
 (defn app []
-  (let [v (:view @app-state)]
+  (let [v (:view @app-state)
+        l (:lang @app-state)]
     [:<>
      (cond
        (#{"Home" "Team"} v)
        [:div.gradient.overflow-x-hidden
         [navbar]
-        [title]
+        [title {:lang l}]
         [below-hero]
         [body]]
 

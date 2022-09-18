@@ -5,7 +5,8 @@
 ;; state
 
 (defonce app-state (atom {:count 0
-                          :view "Home"}))
+                          :view "Home"
+                          :lang :en}))
 
 ;; (assoc @app-state :view title) --> replace app-sate by the result of the function  call
 ;; (swap! atom f) --> (reset! atom (f @atom))
